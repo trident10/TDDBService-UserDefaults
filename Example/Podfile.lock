@@ -1,0 +1,22 @@
+PODS:
+  - TDDBService (0.1.2):
+    - TDResult
+  - TDDBServiceUserDefaults (0.1.0):
+    - TDDBService
+  - TDResult (0.1.1)
+
+DEPENDENCIES:
+  - TDDBServiceUserDefaults (from `../`)
+
+EXTERNAL SOURCES:
+  TDDBServiceUserDefaults:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TDDBService: 6e8fc4673f916879f9419c7568652e53a47017b8
+  TDDBServiceUserDefaults: 329e9c3dea3f753e29c0a8025eaa08724a9bc999
+  TDResult: 8073c47dc4c99174490bce7a35a782ea97ac3c88
+
+PODFILE CHECKSUM: 973b6fcf432a0b2316006b750a46b3c92ecfbf13
+
+COCOAPODS: 1.3.1

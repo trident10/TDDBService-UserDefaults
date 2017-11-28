@@ -1,0 +1,6 @@
+framework module TDDBServiceUserDefaults {
+  umbrella header "TDDBServiceUserDefaults-umbrella.h"
+
+  export *
+  module * { export * }
+}
