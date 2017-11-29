@@ -20,6 +20,12 @@ extension NSString: TDDBData{}
 extension Date: TDDBData{}
 extension NSDate: TDDBData{}
 extension NSNumber: TDDBData{}
+extension Int: TDDBData{}
+extension Float: TDDBData{}
+extension Double: TDDBData{}
+extension Bool: TDDBData{}
+extension Data: TDDBData{}
+extension NSData: TDDBData{}
 
 public class TDDBServiceApiUserDefaults: TDDBServiceApi{
     
@@ -46,12 +52,6 @@ public class TDDBServiceApiUserDefaults: TDDBServiceApi{
         }
         //3.
         setupDBData()
-        if !isDataValid(){
-            DispatchQueue.main.async {[weak self] in
-                self?.completionHandler?(TDResult.Error(TDError.init(TDDBServiceError.invalidEntityType, code: nil, description: "Data is not valid for TDDBServiceApiUserDefaults - Please pass the data in Data format for custom type objects")))
-                return
-            }
-        }
         
         let methodType = request.methodType
         switch methodType{
@@ -120,12 +120,20 @@ public class TDDBServiceApiUserDefaults: TDDBServiceApi{
     
     
     func insert(){
+        if !isDataValid(){
+            DispatchQueue.main.async {[weak self] in
+                self?.completionHandler?(TDResult.Error(TDError.init(TDDBServiceError.invalidEntityType, code: nil, description: "Data is not valid for TDDBServiceApiUserDefaults - Please pass the data in Data format for custom type objects")))
+                return
+            }
+        }
+        
         let storeData = NSKeyedArchiver.archivedData(withRootObject: self.data as Any)
         UserDefaults.standard.setValue(storeData, forKey: entityValue!)
         DispatchQueue.main.async {[weak self] in
             self?.completionHandler?(TDResult.Success(TDDBResponse.init(request: self?.request, data: self?.data)))
         }
     }
+    
     func fetch(){
         let storedData = UserDefaults.standard.value(forKey: entityValue!)
         if storedData == nil{
