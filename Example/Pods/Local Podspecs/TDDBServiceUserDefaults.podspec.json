@@ -1,9 +1,9 @@
 {
   "name": "TDDBServiceUserDefaults",
-  "version": "0.1.0",
-  "summary": "A short description of TDDBServiceUserDefaults.",
+  "version": "0.1.2",
+  "summary": "A UserDefault API for TDDBService",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/trident10/TDDBServiceUserDefaults",
+  "homepage": "https://github.com/trident10/TDDBService-UserDefaults",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "trident10": "abhimanyujindal10@gmail.com"
   },
   "source": {
-    "git": "https://github.com/trident10/TDDBServiceUserDefaults.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/trident10/TDDBService-UserDefaults.git",
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,7 +21,7 @@
   "source_files": "TDDBServiceUserDefaults/Classes/**/*",
   "dependencies": {
     "TDDBService": [
-
+      "0.1.4"
     ]
   }
 }

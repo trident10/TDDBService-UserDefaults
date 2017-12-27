@@ -71,7 +71,7 @@ public class TDDBServiceApiUserDefaults: TDDBServiceApi{
         if entityValue == nil{
             return false
         }
-        if entityValue?.characters.count == 0{
+        if entityValue?.count == 0{
             return false
         }
         return true

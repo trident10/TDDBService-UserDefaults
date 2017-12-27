@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var test: Test = Test()
     override func viewDidLoad() {
         super.viewDidLoad()
-        var testData :NSString = "Test"
+        let testData :NSString = "Test"
         
         test.call(data: testData, methodType: .fetch, predicate: nil, sortDescriptor: nil) { (result) in
             

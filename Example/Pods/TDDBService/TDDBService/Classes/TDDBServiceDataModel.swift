@@ -38,6 +38,7 @@ public enum TDDBServiceError: Error {
     case insertionFailed
     case requestGenerationFailed
     case invalidApi
+    case apiError
 }
 
 public struct TDDBSortDescriptor {
